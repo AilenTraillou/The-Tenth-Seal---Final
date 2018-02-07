@@ -1,0 +1,28 @@
+fileFormatVersion: 2
+guid: bbfc38364c9edb14b9d4f1177767cb00
+timeCreated: 1505689054
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Adobe Arabic
+  fontNames:
+  - Adobe Arabic
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: bb6b6412be7956340be25bb6ac59395e, type: 3}
+  - {fileID: 12800000, guid: 50e544e298e30e04f812b4984f791004, type: 3}
+  - {fileID: 12800000, guid: 686ec6d4ca7884743a7f7c76fb347b59, type: 3}
+  - {fileID: 12800000, guid: 83f13825b5d18cc4786f89ee4c4aed86, type: 3}
+  - {fileID: 12800000, guid: 4c4095880c6b18f4caef03ea6d3f34a5, type: 3}
+  - {fileID: 12800000, guid: 5c88c479023bee94b9ffee3bb6079d90, type: 3}
+  - {fileID: 12800000, guid: 2aeef4ac899130347996cef6a1abee60, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

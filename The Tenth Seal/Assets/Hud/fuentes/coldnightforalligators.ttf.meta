@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 3944a10738a0e2c49a6e732834f268ee
+timeCreated: 1498360673
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Cold Night for Alligators
+  fontNames:
+  - Cold Night for Alligators
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

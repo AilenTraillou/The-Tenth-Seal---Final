@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 0181399a2e52af9498a6e181bb341624
+timeCreated: 1498360850
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Barn House
+  fontNames:
+  - Barn House
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
