@@ -1,0 +1,182 @@
+fileFormatVersion: 2
+guid: 5ee3a2487edf5f444bcb6e4fc9295a0d
+timeCreated: 1511192466
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Box_01
+    100002: Box_02
+    100004: Box_03
+    100006: Box_04
+    100008: Box_05
+    100010: Box_06
+    100012: Box_07
+    100014: Box_08
+    100016: //RootNode
+    100018: Magazine_Box01
+    100020: Magazine_Box02
+    100022: Magazine_Box03
+    100024: Magazine_Box04
+    100026: Magazine_Box05
+    100028: Magazine_Box06
+    100030: Paper_Box01
+    100032: Paper_Box03
+    100034: Paper_Box04
+    100036: Paper_Box05
+    100038: Paper_Box07
+    100040: Paper_Box08
+    100042: Paper_Box09
+    400000: Box_01
+    400002: Box_02
+    400004: Box_03
+    400006: Box_04
+    400008: Box_05
+    400010: Box_06
+    400012: Box_07
+    400014: Box_08
+    400016: //RootNode
+    400018: Magazine_Box01
+    400020: Magazine_Box02
+    400022: Magazine_Box03
+    400024: Magazine_Box04
+    400026: Magazine_Box05
+    400028: Magazine_Box06
+    400030: Paper_Box01
+    400032: Paper_Box03
+    400034: Paper_Box04
+    400036: Paper_Box05
+    400038: Paper_Box07
+    400040: Paper_Box08
+    400042: Paper_Box09
+    2300000: Box_01
+    2300002: Box_02
+    2300004: Box_03
+    2300006: Box_04
+    2300008: Box_05
+    2300010: Box_06
+    2300012: Box_07
+    2300014: Box_08
+    2300016: Magazine_Box01
+    2300018: Magazine_Box02
+    2300020: Magazine_Box03
+    2300022: Magazine_Box04
+    2300024: Magazine_Box05
+    2300026: Magazine_Box06
+    2300028: Paper_Box01
+    2300030: Paper_Box03
+    2300032: Paper_Box04
+    2300034: Paper_Box05
+    2300036: Paper_Box07
+    2300038: Paper_Box08
+    2300040: Paper_Box09
+    3300000: Box_01
+    3300002: Box_02
+    3300004: Box_03
+    3300006: Box_04
+    3300008: Box_05
+    3300010: Box_06
+    3300012: Box_07
+    3300014: Box_08
+    3300016: Magazine_Box01
+    3300018: Magazine_Box02
+    3300020: Magazine_Box03
+    3300022: Magazine_Box04
+    3300024: Magazine_Box05
+    3300026: Magazine_Box06
+    3300028: Paper_Box01
+    3300030: Paper_Box03
+    3300032: Paper_Box04
+    3300034: Paper_Box05
+    3300036: Paper_Box07
+    3300038: Paper_Box08
+    3300040: Paper_Box09
+    4300000: Box_01
+    4300002: Box_02
+    4300004: Box_03
+    4300006: Box_04
+    4300008: Box_05
+    4300010: Box_06
+    4300012: Box_07
+    4300014: Box_08
+    4300016: Magazine_Box01
+    4300018: Magazine_Box02
+    4300020: Magazine_Box03
+    4300022: Magazine_Box04
+    4300024: Magazine_Box05
+    4300026: Magazine_Box06
+    4300028: Paper_Box01
+    4300030: Paper_Box03
+    4300032: Paper_Box04
+    4300034: Paper_Box05
+    4300036: Paper_Box07
+    4300038: Paper_Box08
+    4300040: Paper_Box09
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
