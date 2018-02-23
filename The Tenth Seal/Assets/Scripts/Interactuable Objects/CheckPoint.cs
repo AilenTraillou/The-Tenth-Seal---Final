@@ -18,12 +18,6 @@ public class CheckPoint : MonoBehaviour, ICheckPointObserver {
     {
         characterPosition = player;
     }
-	
-	void Update ()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-            Respawn();
-	}
 
     public void Respawn()
     {

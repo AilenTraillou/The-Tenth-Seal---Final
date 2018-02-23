@@ -3,101 +3,64 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Slug : ObservableInterface{
+public class Slug : Enemy{
 
-    public Transform phBabosa;
-    public Transform playerarm;
+    Transform phSlug;
+    public Transform character;
 
-    private float _distanceBabosa;
-    private float speedBabosa = 25f;
-    private int followRangeBabosa = 60;
-    private int _attackRangeBabosa = 20;
-    private bool _detectedBabosa;
-
-    private float _rotationSpeedBabosa = 5f;
-    public GameObject particles;
-    public GameObject ph_particles;
-    public bool compuerta;
-
+    float distanceSlug;
+    float speedSlug = 25f;
+    float rotationSpeedSlug = 5f;
+    int followRangeSlug = 60;
+    int attackRangeSlug = 20;
+    bool detectedSlug;
 
     void Start()
     {
-        compuerta = true;
-        phBabosa = transform;
-        playerarm = GameObject.Find("Personaje").gameObject.transform;
+        damage = 0.5f;
+        phSlug = transform;
+        character = FindObjectOfType<Character>().gameObject.transform;
         GetComponent<Animation>().Stop("babosa");
     }
 
     void Update()
     {
-        var distance = (playerarm.transform.position - phBabosa.transform.position).magnitude;
-        _distanceBabosa = distance;
+        var distance = (character.transform.position - phSlug.transform.position).magnitude;
+        distanceSlug = distance;
 
-
-        if (_distanceBabosa <= followRangeBabosa)
+        if (distanceSlug <= followRangeSlug)
         {
-
-            _detectedBabosa = true;
+            detectedSlug = true;
         }
         else
         {
             GetComponent<Animation>().Stop("babosa");
-            _detectedBabosa = false;
+            detectedSlug = false;
         }
 
-        if (_detectedBabosa)
+        if (detectedSlug)
         {
-
             GetComponent<Animation>().Play("babosa");
-
             FollowThePlayer();
-        }
-
-        //if (compuerta)
-        //{
-        //    if (CompuertaAutomatica.instance._detected)
-        //    {
-        //        compuerta = false;
-        //        Destroy(gameObject);
-        //    }
-        //}
-        
+        }        
     }
 
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, followRangeBabosa);
+        Gizmos.DrawWireSphere(transform.position, followRangeSlug);
 
     }
 
     void FollowThePlayer()
     {
-        if (_distanceBabosa >= _attackRangeBabosa)
+        if (distanceSlug >= attackRangeSlug)
         {
-            phBabosa.position += phBabosa.forward * speedBabosa * Time.deltaTime;
+            phSlug.position += phSlug.forward * speedSlug * Time.deltaTime;
         }
 
-        if (_distanceBabosa <= _attackRangeBabosa)
-        {
-            Attack();
-        }
-
-        phBabosa.rotation = Quaternion.Slerp(phBabosa.rotation, Quaternion.LookRotation(playerarm.position - phBabosa.position), _rotationSpeedBabosa * Time.deltaTime);
+        phSlug.rotation = Quaternion.Slerp(phSlug.rotation, Quaternion.LookRotation(character.position - phSlug.position), rotationSpeedSlug * Time.deltaTime);
         transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
-
-        foreach (var item in observerList)
-        {
-            item.Notify(gameObject);
-        }
-    }
-
-
-    void Attack()
-    {
-        GameObject attack_effect = Instantiate(particles);
-        attack_effect.transform.position = ph_particles.transform.position;
-        attack_effect.transform.forward = ph_particles.transform.forward;
     }
 
 }

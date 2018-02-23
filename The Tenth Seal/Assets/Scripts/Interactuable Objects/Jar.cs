@@ -52,7 +52,8 @@ public class Jar : MonoBehaviour, IInteractuableObjects, IChechPointObservable {
             if(gameObject.tag == "GoAway")
             {
                 GoAwayMessage goAway = FindObjectOfType<GoAwayMessage>();
-                goAway.activateMessage = true; 
+                if(goAway != null)
+                    goAway.activateMessage = true;            
             }
         }
 

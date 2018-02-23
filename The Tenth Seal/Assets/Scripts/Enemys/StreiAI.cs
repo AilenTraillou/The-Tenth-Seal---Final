@@ -55,7 +55,9 @@ public class StreiAI : MonoBehaviour, IOnPause {
                 GetComponent<Animation>().Stop("Run");
                 GetComponent<Animation>().Play("Idle");
             }
-            pointlight.enabled = false;
+
+            if(pointlight != null)
+                pointlight.enabled = false;
         }
 
         if (onPause == false)

@@ -6,6 +6,7 @@ using UnityEngine;
 public class Oil : MonoBehaviour, IInteractuableObjects
 {
     public bool canGetOil = true;
+    public float oilRecover = 25f;
 
     public void ActivateObject()
     {

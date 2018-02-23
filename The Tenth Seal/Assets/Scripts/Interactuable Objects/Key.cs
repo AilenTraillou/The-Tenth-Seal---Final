@@ -19,10 +19,17 @@ public class Key : MonoBehaviour, IInteractuableObjects
         door.getKey = true;
         MessegeController.instance.OpenDialog(MessageDictionary.GET_KEY);
 
+        if(gameObject.tag == "GoAway")
+        {
+            InvokeSlugs slugs = FindObjectOfType<InvokeSlugs>();
+            slugs.Slugs();                 
+        }
+
     }
 
     public void DesactivateObject()
     {
+        light.enabled = false;
     }
 
     public void ActivateOnTrigger()

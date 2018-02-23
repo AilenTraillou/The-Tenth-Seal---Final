@@ -7,10 +7,6 @@ using UnityEngine.UI;
 
 public class ControllerCharacter : MonoBehaviour, IOnPause {
 
-    //public static Character instance;
-    //private Scene scene;
-    //public static string nivel;
-    //public static string asesino;
     public event Action<bool> OnMobileDevice = delegate { };
 
     ModelCharacter model;
@@ -24,6 +20,7 @@ public class ControllerCharacter : MonoBehaviour, IOnPause {
 
     DepurationConsole depConsole;
     GameManager gameManager;
+    Ads ads;
     bool onPause;
 
     bool isOnPC;
@@ -35,11 +32,9 @@ public class ControllerCharacter : MonoBehaviour, IOnPause {
         view = v;
 
         view.GetLife(model.life, 0);
-        view.GetMana(model.mana);
         view.GetOil(model.oil, false);
 
         model.GetLife += view.GetLife;
-        model.TakeMana += view.GetMana;
         model.TakeOil += view.GetOil;
         model.DestroyGameObject += view.DestroyObject;
         model.ManaManage += view.ManageCheckpoint;
@@ -50,7 +45,6 @@ public class ControllerCharacter : MonoBehaviour, IOnPause {
         model.InteractCursor += view.GetCursor;
         model.AcidBurn += view.AcidBurn;
         model.ConsumeOil += view.LightOnOff;
-
     }
 
     void Awake()
@@ -76,16 +70,12 @@ public class ControllerCharacter : MonoBehaviour, IOnPause {
         model = GetComponent<ModelCharacter>();
         depConsole = FindObjectOfType<DepurationConsole>();
         gameManager = FindObjectOfType<GameManager>();
+        ads = FindObjectOfType<Ads>();
+        //view.OnDeath += ads.OnDeath;
 
         interact.onClick.AddListener(model.Interact);
         jump.onClick.AddListener(model.Jump);
     }
-
-    //void Start()
-    //{
-    //    scene = SceneManager.GetActiveScene();        
-    //    instance = this;
-    //}
    
     void Update()
     {

@@ -22,8 +22,11 @@ public class ModelCharacter : MonoBehaviour, IOnPause {
     public event Action<GameObject> ManaManage = delegate { };
     public event Action<bool> ConsumeOil = delegate { };
 
+    public static float lifeToNextLevel = 100f;
+    public static float oilToNextLevel = 100.9f;
+
     public float life = 100;
-    public float mana = 100;
+    //public float mana = 100;
     public float oil = 100.9f;
     [HideInInspector]
     public float lifeToRecover = 0.0001f;
@@ -97,6 +100,8 @@ public class ModelCharacter : MonoBehaviour, IOnPause {
         chSpeed = characterSpeed;
         chRunSpeed = characterRunSpeed;
         chJumpStr = characterJumpStr;
+
+        life = lifeToNextLevel;
     }
 	
 	void Update () {
@@ -123,7 +128,6 @@ public class ModelCharacter : MonoBehaviour, IOnPause {
         }
 
         ManageLife();
-        ManageMana();
         ManageOil();
 
         if (!isWalking && !isRuning && !isJumping && !isWalkingOnWater)
@@ -136,6 +140,11 @@ public class ModelCharacter : MonoBehaviour, IOnPause {
 
         if(foundGem == false)
             timeToFindGem += Time.deltaTime;
+    }
+
+    public void SetStatsOnNextLevel()
+    {
+        lifeToNextLevel = life;
     }
 
     public void TakeDamage(float value)
@@ -234,9 +243,16 @@ public class ModelCharacter : MonoBehaviour, IOnPause {
         ground = 0;
     }
 
+    public void RestartFromDeath()
+    {
+        life += 100;
+        GetLife(life, totalDamage);
+        oil += 100.9f;
+        TakeOil(oil, false);
+    }
+
     void Death()
     {
-
         deathTimes++;
 
         Scene _scene = SceneManager.GetActiveScene();
@@ -255,7 +271,7 @@ public class ModelCharacter : MonoBehaviour, IOnPause {
             {"Acid Water attack",  acidWaterAttack},
             {"Screamer attack",  screamerAttack},
             {"Level", _scene.name }
-        });
+        });    
     }
 
     void GemStatistics()
@@ -278,6 +294,7 @@ public class ModelCharacter : MonoBehaviour, IOnPause {
     {
         if (life > 100)
             life = 100;
+
         life += lifeToRecover;
         GetLife(life, totalDamage);
 
@@ -288,20 +305,20 @@ public class ModelCharacter : MonoBehaviour, IOnPause {
         }
     }
 
-    void ManageMana()
-    {
-        if (mana > 100)
-            mana = 100;
-        if(manaToRecover != 0)
-            mana += manaToRecover;
-        TakeMana(mana);
+    //void ManageMana()
+    //{
+    //    if (mana > 100)
+    //        mana = 100;
+    //    if(manaToRecover != 0)
+    //        mana += manaToRecover;
+    //    TakeMana(mana);
 
-        if (consumeMana)
-        {
-            mana -= 0.1f;
-            TakeMana(mana);
-        }
-    }
+    //    if (consumeMana)
+    //    {
+    //        mana -= 0.1f;
+    //        TakeMana(mana);
+    //    }
+    //}
 
     public void ConsumeMana()
     {
@@ -318,10 +335,11 @@ public class ModelCharacter : MonoBehaviour, IOnPause {
 
         if (consumeOil)
         {
-            if(oil > 0)
-                oil -= 0.002f;
+            if (oil > 0)
+                oil -= 0.01f;
+                //oil -= 0.002f;
 
-            totalConsumedOil += 0.002f;
+            totalConsumedOil += 0.01f;
 
             TakeOil(oil, false);
         }
@@ -346,27 +364,45 @@ public class ModelCharacter : MonoBehaviour, IOnPause {
                 {
                     TakeKey();
                     DestroyGameObject(objectOnTrigger);
+                    ObjectsCount.instance.totalItemsOnLevelFound++;
                 }
 
                 if (objectOnTrigger.GetComponent(typeof(Oil)))
                 {
                     if (objectOnTrigger.GetComponent<Oil>().canGetOil)
                     {
-                        oil += 25f;
+                        oil += objectOnTrigger.GetComponent<Oil>().oilRecover;
                         TakeOil(oil, true);
                         objectOnTrigger.GetComponent<Oil>().canGetOil = false;
+                        ObjectsCount.instance.totalOilCharged += objectOnTrigger.GetComponent<Oil>().oilRecover;
                     }
+                }
+
+                if (objectOnTrigger.GetComponent(typeof(Medicine)))
+                {              
+                    life += objectOnTrigger.GetComponent<Medicine>().hpRecover;
+                    GetLife(life, 0);
+                    DestroyGameObject(objectOnTrigger);
+                    ObjectsCount.instance.lifeRecovered++;
+                    ObjectsCount.instance.totalItemsOnLevelFound++;
                 }
 
                 if (objectOnTrigger.GetComponent(typeof(Gems)))
                 {
                     GemStatistics();
                     DestroyGameObject(objectOnTrigger);
+                    ObjectsCount.instance.totalItemsOnLevelFound++;
                 }
 
                 if (objectOnTrigger.GetComponent(typeof(Mana)))
                 {                    
                     ManaManage(objectOnTrigger);
+                    DestroyGameObject(objectOnTrigger);
+                    ObjectsCount.instance.totalItemsOnLevelFound++;
+                }
+
+                if (objectOnTrigger.GetComponent(typeof(RedSubstance)))
+                {
                     DestroyGameObject(objectOnTrigger);
                 }
 
@@ -398,6 +434,7 @@ public class ModelCharacter : MonoBehaviour, IOnPause {
             {
                 c.GetComponent<Lever>().ActivateOnTrigger();
             }
+
             activateObject = true;
             objectOnTrigger = c.gameObject;
         }
@@ -414,7 +451,9 @@ public class ModelCharacter : MonoBehaviour, IOnPause {
         {
             if (c.gameObject.GetComponent<Enemy>())
                 spikeWallAttack = true;
+
             TakeDamage(c.gameObject.GetComponent<Enemy>().damage);
+            ObjectsCount.instance.damageTaken += c.gameObject.GetComponent<Enemy>().damage;
         }
     }
 
@@ -424,6 +463,7 @@ public class ModelCharacter : MonoBehaviour, IOnPause {
         {
             isWalkingOnWater = true;
             TakeDamage(c.gameObject.GetComponent<AcidWater>().damage);
+            ObjectsCount.instance.damageTaken += c.gameObject.GetComponent<AcidWater>().damage;
         }
 
         if (c.GetComponent(typeof(IInteractuableObjects)))
@@ -444,6 +484,7 @@ public class ModelCharacter : MonoBehaviour, IOnPause {
         {
             objectOnTrigger = c.gameObject;
             objectOnTrigger.GetComponent<IInteractuableObjects>().DesactivateObject();
+            activateObject = false;
         }
     }
 
@@ -469,7 +510,25 @@ public class ModelCharacter : MonoBehaviour, IOnPause {
 
         if (c.gameObject.GetComponent<Enemy>())
         {
+            if (c.gameObject.GetComponent<SkeletonMonster>() == false)
+                TakeDamage(c.gameObject.GetComponent<Enemy>().damage);
+
+            if (c.gameObject.GetComponent<SkeletonMonster>() && c.gameObject.GetComponent<SkeletonMonster>().isAttacking)
+            {
+                TakeDamage(c.gameObject.GetComponent<Enemy>().damage);
+                print("ddasddadas monster");
+            }
+            
+            ObjectsCount.instance.damageTaken += c.gameObject.GetComponent<Enemy>().damage;
+        }
+    }
+
+    void OnCollisionStay(Collision c)
+    {
+        if (c.gameObject.GetComponent<Enemy>())
+        {
             TakeDamage(c.gameObject.GetComponent<Enemy>().damage);
+            ObjectsCount.instance.damageTaken += c.gameObject.GetComponent<Enemy>().damage;
         }
     }
 

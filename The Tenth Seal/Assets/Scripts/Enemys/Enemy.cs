@@ -5,5 +5,5 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
     [HideInInspector]
-    public int damage;
+    public float damage;
 }

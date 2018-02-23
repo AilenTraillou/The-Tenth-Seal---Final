@@ -13,8 +13,8 @@ public class Mana : MonoBehaviour, IInteractuableObjects {
     }
 
     public void ActivateObject()
-    {      
-                
+    {
+        MessegeController.instance.OpenDialog(MessageDictionary.GET_SUBSTANCE);
     }
 
     public void ActivateOnTrigger()

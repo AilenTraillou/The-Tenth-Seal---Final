@@ -10,8 +10,13 @@ public class Gems : MonoBehaviour, IInteractuableObjects
     {
         MessegeController.instance.OpenDialog(MessageDictionary.GET_GEMS);
         ObjectsCount.instance.gems++;
-        print(ObjectsCount.instance.gems);
         _light.enabled = false;
+
+        if(gameObject.tag == "ghost")
+        {
+            InvokeGhost ghost = FindObjectOfType<InvokeGhost>();
+            ghost.Ghost();
+        }
     }
 
     public void DesactivateObject()

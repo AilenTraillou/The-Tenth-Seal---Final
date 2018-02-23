@@ -8,9 +8,10 @@ using UnityEngine.Analytics;
 
 public class ViewCharacter : MonoBehaviour, IOnPause {
 
+    public event Action OnDeath = delegate { };
+
     public Image cursor;
     public Image life;
-    public Image mana;
     public Text oil;
     public Text deathText;
     public Image blackScreen;
@@ -23,13 +24,16 @@ public class ViewCharacter : MonoBehaviour, IOnPause {
     public Text message;
     public AudioClip[] clips;
     public AudioSource[] channels;
-
     public ParticleSystem steam;
-
+    public bool hospitalLevelCompleted;
+    public bool houseLevelCompleted;
+    
     CameraWalkAnimation walkAnimation;
+    bool endOfGame;
     bool onPause;
     bool onAcidBurn;
     float _totalDamage;
+    int counter;
 
     void Awake()
     {
@@ -47,19 +51,28 @@ public class ViewCharacter : MonoBehaviour, IOnPause {
 
 	void Start ()
     {
+        alpha = 0;
         cursor.enabled = false;
         walkAnimation = Camera.main.GetComponent<CameraWalkAnimation>();
     }
 
     private void Update()
     {
+
         if (life.fillAmount <= 0)
         {
             if (alpha < 255)
                 alpha++;
             ChangeAlpha(alpha);
-            Invoke("RestartScene", 4f);
-        }       
+        }
+
+        if (hospitalLevelCompleted || houseLevelCompleted || endOfGame)
+        {
+            if (alpha < 255)
+                alpha++;
+            BlackScreen(alpha);
+        }
+
     }
 
     public void OnPause(bool isOnPause)
@@ -81,12 +94,32 @@ public class ViewCharacter : MonoBehaviour, IOnPause {
             {
                 steam.Play();
                 channels[CharacterSounds.CHARACTER_ACID_BURN].Play();
-            }
-            
+            }         
         }
 
         if (onAcidBurn == false)
             steam.Stop();
+    }
+
+    public void HospitalLevelCompleted(string level)
+    {
+        if (level == "hospital")
+            hospitalLevelCompleted = true;
+        if (level == "house")
+            houseLevelCompleted = true;
+    }
+
+    public void EndOfGame()
+    {
+        endOfGame = true;
+    }
+
+    public void RetryFromDeath()
+    {
+        counter = 0;
+        deathText.enabled = false;
+        blackScreen.enabled = false;
+        ChangeAlpha(0);
     }
 
     public void GetCursor()
@@ -96,15 +129,28 @@ public class ViewCharacter : MonoBehaviour, IOnPause {
 
     public void Idle()
     {
-        walkAnimation.walk = false;
-        
+        walkAnimation.walk = false;   
     }
 
     public void GetLife(float _lifeValue, float totalDamage)
     {
+        //if(life.fillAmount > 0)
         life.fillAmount = _lifeValue / 100;
         _totalDamage = totalDamage;
-        
+
+        if(life.fillAmount == 0)
+        {
+            counter++;
+            Death(counter);
+        }
+    }
+
+    public void Death(int isDeath)
+    {
+        if (isDeath == 1)
+        {
+            Invoke("RestartScene", 10f);
+        }
     }
 
     public void GetOil(float _oilValue, bool takeOil)
@@ -124,12 +170,7 @@ public class ViewCharacter : MonoBehaviour, IOnPause {
     public void GetKey()
     {
         Play(CharacterSounds.CHARACTER_PICKUP_KEY);
-    }
-
-    public void GetMana(float _manaValue)
-    {
-        mana.fillAmount = _manaValue / 100;
-    }
+    }   
 
     public void ManageCheckpoint(GameObject _object)
     {
@@ -163,16 +204,44 @@ public class ViewCharacter : MonoBehaviour, IOnPause {
         blackScreen.color = newScreenAlpha;
     }
 
+    void BlackScreen(byte newcolor)
+    {
+        if(endOfGame == false)
+        {
+            Color newScreenAlpha = new Color32(0, 0, 0, newcolor);
+            blackScreen.color = newScreenAlpha;
+
+            if(alpha >= 254)
+            {
+                if (hospitalLevelCompleted)
+                    SceneManager.LoadScene(3);
+                if (houseLevelCompleted)
+                    SceneManager.LoadScene(4);
+            }
+        }
+        else
+        {
+            Color newScreenAlpha = new Color32(0, 0, 0, newcolor);
+            blackScreen.color = newScreenAlpha;
+
+            if (alpha >= 254)
+            {
+                deathText.text = "Your sister's soul is free... Now You and your sister can be on peace finally...";
+            }
+        }
+    }
+
     void RestartScene()
     {
         Cursor.lockState = CursorLockMode.None;
+        deathText.enabled = false;
+        OnDeath();
+
         Analytics.CustomEvent("Damage", new Dictionary<string, object>
         {
             {"Total accumulative Damage",  _totalDamage}
             
         });
-        print("evento");
-        SceneManager.LoadScene(2);
     }
 
     public void AcidBurn(bool active)
