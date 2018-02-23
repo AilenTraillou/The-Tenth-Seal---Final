@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: 1e1d2bcbfb742714ea705d54bc88b732
+timeCreated: 1511208535
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Box01
+    100002: Box03
+    100004: Box04
+    100006: Box05
+    100008: Camera01
+    100010: Camera01.Target
+    100012: Cylinder01
+    100014: Cylinder02
+    100016: Cylinder03
+    100018: Cylinder04
+    100020: Cylinder06
+    100022: Cylinder07
+    100024: "Fussest\xE4nder2"
+    100026: "Fussst\xE4nder3"
+    100028: "F\xFCssest\xE4nder"
+    100030: "F\xFCssest\xE4nder01"
+    100032: "F\xFCssest\xE4nder02"
+    100034: GeoSphere01
+    100036: //RootNode
+    100038: Line02
+    100040: Line03
+    100042: Omni01
+    100044: Omni02
+    100046: "St\xE4nder01"
+    400000: Box01
+    400002: Box03
+    400004: Box04
+    400006: Box05
+    400008: Camera01
+    400010: Camera01.Target
+    400012: Cylinder01
+    400014: Cylinder02
+    400016: Cylinder03
+    400018: Cylinder04
+    400020: Cylinder06
+    400022: Cylinder07
+    400024: "Fussest\xE4nder2"
+    400026: "Fussst\xE4nder3"
+    400028: "F\xFCssest\xE4nder"
+    400030: "F\xFCssest\xE4nder01"
+    400032: "F\xFCssest\xE4nder02"
+    400034: GeoSphere01
+    400036: //RootNode
+    400038: Line02
+    400040: Line03
+    400042: Omni01
+    400044: Omni02
+    400046: "St\xE4nder01"
+    2300000: Box01
+    2300002: Box03
+    2300004: Box04
+    2300006: Box05
+    2300008: Cylinder01
+    2300010: Cylinder02
+    2300012: Cylinder03
+    2300014: Cylinder04
+    2300016: Cylinder06
+    2300018: Cylinder07
+    2300020: "Fussest\xE4nder2"
+    2300022: "Fussst\xE4nder3"
+    2300024: GeoSphere01
+    2300026: Line02
+    2300028: Line03
+    2300030: "St\xE4nder01"
+    3300000: Box01
+    3300002: Box03
+    3300004: Box04
+    3300006: Box05
+    3300008: Cylinder01
+    3300010: Cylinder02
+    3300012: Cylinder03
+    3300014: Cylinder04
+    3300016: Cylinder06
+    3300018: Cylinder07
+    3300020: "Fussest\xE4nder2"
+    3300022: "Fussst\xE4nder3"
+    3300024: GeoSphere01
+    3300026: Line02
+    3300028: Line03
+    3300030: "St\xE4nder01"
+    4300000: "St\xE4nder01"
+    4300002: Line02
+    4300004: GeoSphere01
+    4300006: Line03
+    4300008: Box01
+    4300010: Cylinder01
+    4300012: Cylinder02
+    4300014: Cylinder03
+    4300016: Cylinder04
+    4300018: Box03
+    4300020: "Fussest\xE4nder2"
+    4300022: Cylinder06
+    4300024: Box04
+    4300026: "Fussst\xE4nder3"
+    4300028: Cylinder07
+    4300030: Box05
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
