@@ -1,0 +1,314 @@
+fileFormatVersion: 2
+guid: 696c9cd88c4b38240ae5daf9c88404cd
+timeCreated: 1499008258
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Babosa
+    100002: //RootNode
+    100004: Cone002
+    100006: Cone003
+    100008: Cone004
+    100010: Cone005
+    100012: Cone006
+    100014: Cone007
+    100016: Cone008
+    100018: Cone009
+    100020: Cone010
+    100022: Cone011
+    100024: Cone012
+    100026: Cone013
+    100028: Cone014
+    100030: Cone015
+    100032: Cone016
+    100034: Cone017
+    100036: Cone018
+    100038: Cone019
+    100040: Cone020
+    100042: Cone021
+    100044: Cone022
+    100046: Cone023
+    100048: Lizard
+    100050: LizardHead
+    100052: LizardHeadGizmo
+    100054: LizardNeck
+    100056: LizardNeckGizmo
+    100058: LizardPelvis
+    100060: LizardPelvisGizmo
+    100062: LizardRibcage
+    100064: LizardSpine1
+    100066: LizardSpine1Gizmo
+    100068: LizardSpine2
+    100070: LizardSpine2Gizmo
+    100072: LizardTail1
+    100074: LizardTail1Gizmo
+    100076: LizardTail2
+    100078: LizardTail2Gizmo
+    400000: Babosa
+    400002: //RootNode
+    400004: Cone002
+    400006: Cone003
+    400008: Cone004
+    400010: Cone005
+    400012: Cone006
+    400014: Cone007
+    400016: Cone008
+    400018: Cone009
+    400020: Cone010
+    400022: Cone011
+    400024: Cone012
+    400026: Cone013
+    400028: Cone014
+    400030: Cone015
+    400032: Cone016
+    400034: Cone017
+    400036: Cone018
+    400038: Cone019
+    400040: Cone020
+    400042: Cone021
+    400044: Cone022
+    400046: Cone023
+    400048: Lizard
+    400050: LizardHead
+    400052: LizardHeadGizmo
+    400054: LizardNeck
+    400056: LizardNeckGizmo
+    400058: LizardPelvis
+    400060: LizardPelvisGizmo
+    400062: LizardRibcage
+    400064: LizardSpine1
+    400066: LizardSpine1Gizmo
+    400068: LizardSpine2
+    400070: LizardSpine2Gizmo
+    400072: LizardTail1
+    400074: LizardTail1Gizmo
+    400076: LizardTail2
+    400078: LizardTail2Gizmo
+    4300000: Babosa
+    4300002: Cone002
+    4300004: Cone003
+    4300006: Cone004
+    4300008: Cone005
+    4300010: Cone006
+    4300012: Cone007
+    4300014: Cone008
+    4300016: Cone009
+    4300018: Cone010
+    4300020: Cone011
+    4300022: Cone012
+    4300024: Cone013
+    4300026: Cone014
+    4300028: Cone015
+    4300030: Cone016
+    4300032: Cone017
+    4300034: Cone018
+    4300036: Cone019
+    4300038: Cone020
+    4300040: Cone021
+    4300042: Cone022
+    4300044: Cone023
+    7400000: babosa
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Babosa
+    13700002: Cone002
+    13700004: Cone003
+    13700006: Cone004
+    13700008: Cone005
+    13700010: Cone006
+    13700012: Cone007
+    13700014: Cone008
+    13700016: Cone009
+    13700018: Cone010
+    13700020: Cone011
+    13700022: Cone012
+    13700024: Cone013
+    13700026: Cone014
+    13700028: Cone015
+    13700030: Cone016
+    13700032: Cone017
+    13700034: Cone018
+    13700036: Cone019
+    13700038: Cone020
+    13700040: Cone021
+    13700042: Cone022
+    13700044: Cone023
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: babosa
+      takeName: Take 001
+      firstFrame: 30
+      lastFrame: 59
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Babosa
+        weight: 1
+      - path: Cone002
+        weight: 1
+      - path: Cone003
+        weight: 1
+      - path: Cone004
+        weight: 1
+      - path: Cone005
+        weight: 1
+      - path: Cone006
+        weight: 1
+      - path: Cone007
+        weight: 1
+      - path: Cone008
+        weight: 1
+      - path: Cone009
+        weight: 1
+      - path: Cone010
+        weight: 1
+      - path: Cone011
+        weight: 1
+      - path: Cone012
+        weight: 1
+      - path: Cone013
+        weight: 1
+      - path: Cone014
+        weight: 1
+      - path: Cone015
+        weight: 1
+      - path: Cone016
+        weight: 1
+      - path: Cone017
+        weight: 1
+      - path: Cone018
+        weight: 1
+      - path: Cone019
+        weight: 1
+      - path: Cone020
+        weight: 1
+      - path: Cone021
+        weight: 1
+      - path: Cone022
+        weight: 1
+      - path: Cone023
+        weight: 1
+      - path: Lizard
+        weight: 1
+      - path: LizardHeadGizmo
+        weight: 1
+      - path: LizardNeckGizmo
+        weight: 1
+      - path: LizardPelvis
+        weight: 1
+      - path: LizardPelvis/LizardSpine1
+        weight: 1
+      - path: LizardPelvis/LizardSpine1/LizardSpine2
+        weight: 1
+      - path: LizardPelvis/LizardSpine1/LizardSpine2/LizardRibcage
+        weight: 1
+      - path: LizardPelvis/LizardSpine1/LizardSpine2/LizardRibcage/LizardNeck
+        weight: 1
+      - path: LizardPelvis/LizardSpine1/LizardSpine2/LizardRibcage/LizardNeck/LizardHead
+        weight: 1
+      - path: LizardPelvis/LizardTail1
+        weight: 1
+      - path: LizardPelvis/LizardTail1/LizardTail2
+        weight: 1
+      - path: LizardPelvisGizmo
+        weight: 1
+      - path: LizardSpine1Gizmo
+        weight: 1
+      - path: LizardSpine2Gizmo
+        weight: 1
+      - path: LizardTail1Gizmo
+        weight: 1
+      - path: LizardTail2Gizmo
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
