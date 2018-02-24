@@ -149,6 +149,8 @@
     <Compile Include="Assets\Scripts\Enemys\Debuff\SpikeWallTakeDamage.cs" />
     <Compile Include="Assets\Scripts\Enemys\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemys\EnemyLife.cs" />
+    <Compile Include="Assets\Scripts\Enemys\Ghost.cs" />
+    <Compile Include="Assets\Scripts\Enemys\InvokeMonster.cs" />
     <Compile Include="Assets\Scripts\Enemys\Screamer.cs" />
     <Compile Include="Assets\Scripts\Enemys\Screamer_ScriptObject.cs" />
     <Compile Include="Assets\Scripts\Enemys\SkeletonMonster.cs" />
@@ -156,6 +158,7 @@
     <Compile Include="Assets\Scripts\Enemys\SpikeWall_ScriptObject.cs" />
     <Compile Include="Assets\Scripts\Enemys\StreiAI.cs" />
     <Compile Include="Assets\Scripts\Enemys\phbabosa.cs" />
+    <Compile Include="Assets\Scripts\Interactuable Objects\AngelStatue.cs" />
     <Compile Include="Assets\Scripts\Interactuable Objects\BurningPainting.cs" />
     <Compile Include="Assets\Scripts\Interactuable Objects\CharacterLight.cs" />
     <Compile Include="Assets\Scripts\Interactuable Objects\CheckPoint.cs" />
@@ -165,12 +168,17 @@
     <Compile Include="Assets\Scripts\Interactuable Objects\DraggableDoor.cs" />
     <Compile Include="Assets\Scripts\Interactuable Objects\Gems.cs" />
     <Compile Include="Assets\Scripts\Interactuable Objects\GoAwayMessage.cs" />
+    <Compile Include="Assets\Scripts\Interactuable Objects\HospitalDoor.cs" />
+    <Compile Include="Assets\Scripts\Interactuable Objects\HouseBlockDoor.cs" />
     <Compile Include="Assets\Scripts\Interactuable Objects\InteractionCursor.cs" />
     <Compile Include="Assets\Scripts\Interactuable Objects\InteractuableObjects.cs" />
+    <Compile Include="Assets\Scripts\Interactuable Objects\InvokeGhost.cs" />
+    <Compile Include="Assets\Scripts\Interactuable Objects\InvokeSlugs.cs" />
     <Compile Include="Assets\Scripts\Interactuable Objects\Jar.cs" />
     <Compile Include="Assets\Scripts\Interactuable Objects\Key.cs" />
     <Compile Include="Assets\Scripts\Interactuable Objects\Lever.cs" />
     <Compile Include="Assets\Scripts\Interactuable Objects\Mana.cs" />
+    <Compile Include="Assets\Scripts\Interactuable Objects\Medicine.cs" />
     <Compile Include="Assets\Scripts\Interactuable Objects\ObjectsCount.cs" />
     <Compile Include="Assets\Scripts\Interactuable Objects\ObservableInterface.cs" />
     <Compile Include="Assets\Scripts\Interactuable Objects\Oil.cs" />
@@ -181,7 +189,10 @@
     <Compile Include="Assets\Scripts\Interactuable Objects\PowerUp\LightBlinder.cs" />
     <Compile Include="Assets\Scripts\Interactuable Objects\PowerUp\ManaManager.cs" />
     <Compile Include="Assets\Scripts\Interactuable Objects\PowerUp\PowerUpLight.cs" />
+    <Compile Include="Assets\Scripts\Interactuable Objects\RedJar.cs" />
+    <Compile Include="Assets\Scripts\Interactuable Objects\RedSubstance.cs" />
     <Compile Include="Assets\Scripts\Interactuable Objects\Triggers\Chair.cs" />
+    <Compile Include="Assets\Scripts\Interactuable Objects\Triggers\StoneCollapse.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IAdvance.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IChechPointObservable.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ICheckPointObserver.cs" />
@@ -198,8 +209,11 @@
     <Compile Include="Assets\Scripts\Sounds\Chains.cs" />
     <Compile Include="Assets\Scripts\Sounds\SoundsController.cs" />
     <Compile Include="Assets\Scripts\Sounds\SoundsManager.cs" />
+    <Compile Include="Assets\Scripts\UI\Achievements.cs" />
     <Compile Include="Assets\Scripts\UI\Ads.cs" />
+    <Compile Include="Assets\Scripts\UI\AdsNew.cs" />
     <Compile Include="Assets\Scripts\UI\CustomCursor.cs" />
+    <Compile Include="Assets\Scripts\UI\DepConsoleCheats.cs" />
     <Compile Include="Assets\Scripts\UI\DepurationConsole.cs" />
     <Compile Include="Assets\Scripts\UI\GameManager.cs" />
     <Compile Include="Assets\Scripts\UI\LevelManager.cs" />
@@ -207,6 +221,7 @@
     <Compile Include="Assets\Scripts\UI\LifeBar.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
     <Compile Include="Assets\Scripts\UI\MessegeController.cs" />
+    <Compile Include="Assets\Scripts\UI\MobileKeyboard.cs" />
     <Compile Include="Assets\Scripts\UI\Stat.cs" />
     <Compile Include="Assets\Scripts\Water, Light and Particles\Farol.cs" />
     <Compile Include="Assets\Scripts\Water, Light and Particles\FlickeringLight.cs" />

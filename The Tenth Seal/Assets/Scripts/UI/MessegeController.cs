@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class MessegeController : MonoBehaviour {
 
-  
     public Text messege;
     public Image dialogBox;
     [HideInInspector]
@@ -26,15 +25,15 @@ public class MessegeController : MonoBehaviour {
         messege.enabled = true;
         dialogBox.enabled = true;
         messege.text = messegeContent;
-        Invoke("CloseDialog", 2f);
+        Invoke("CloseDialog", 4f);
     }
 
     public void CloseDialog()
     {
         messege.enabled = false;
         dialogBox.enabled = false; 
+        messege.text = "";
     }
-
 }
 
 public class MessageDictionary
@@ -47,4 +46,10 @@ public class MessageDictionary
     public const string CANNOT_GET_OIL = "It looks like there is no more oil...";
     public const string CANNOT_GET_CHECKPOINT = "Haven't enough substance to invoke the spell...";
     public const string SPELL_DONE = "The spell is done.";
+    public const string GET_MEDICINE= "Medicine taken.";
+    public const string BLOCK_DOOR = "The door is blocked in the other side.";
+    public const string GET_RED_SUBSTANCES = "Some red substances found.";
+    public const string CANNOT_ACTIVATE_RED_JAR = "Haven't the suitable substance...";
+    public const string CANNOT_ACTIVATE_STATUE = "Haven't enough gems to invoke the spell...";
+    public const string ACTIVATE_STATUE = "The Spell is done. Your sister's soul is free... Now You and your sister can be on peace finally...";
 }

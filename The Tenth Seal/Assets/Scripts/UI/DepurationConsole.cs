@@ -17,7 +17,9 @@ public class DepurationConsole : MonoBehaviour {
     public InputField commandToWrite;
     public Scrollbar scroll;
     public GameObject console;
+    public GameObject cheats;
     public bool isConsoleActive;
+    int auxMana;
 
     ModelCharacter model;
     ControllerCharacter controller;
@@ -64,6 +66,7 @@ public class DepurationConsole : MonoBehaviour {
         OnPause += controller.OnPause;
         OnPause += view.OnPause;
         OnPause += levelManager.OnPause;
+
         if (chair != null)
             OnPause += chair.OnPause;
         if(waterParticles != null)
@@ -76,16 +79,19 @@ public class DepurationConsole : MonoBehaviour {
 
         _depurationFunction = Start;
 
-        GetCommand("get_all_keys", GetAllKeys);
-        GetCommand("infinite_life = on", GetInfiniteLife);
-        GetCommand("infinite_life = off", GetInfiniteLife);
-        GetCommand("infinite_mana = On", GetInfiniteMana);
-        GetCommand("infinite_mana = off", GetInfiniteMana);
-        GetCommand("infinite_oil = on", GetInfiniteOil);
-        GetCommand("infinite_oil = off", GetInfiniteOil);
+        GetCommand("get all gems", GetAllGems);
+        GetCommand("get all keys", GetAllKeys);
+        GetCommand("infinite life = on", GetInfiniteLife);
+        GetCommand("infinite life = off", GetInfiniteLife);
+        GetCommand("infinite mana = on", GetInfiniteMana);
+        GetCommand("infinite mana = off", GetInfiniteMana);
+        GetCommand("infinite oil = on", GetInfiniteOil);
+        GetCommand("infinite oil = off", GetInfiniteOil);
         GetCommand("light = on", GetIllumination);
         GetCommand("light = off", GetIllumination);
 
+
+        cheats.SetActive(false);
     }
 
     public void GetCommand(string commandName, depurationFunction depFunction)
@@ -150,6 +156,12 @@ public class DepurationConsole : MonoBehaviour {
         }
     }
 
+    void GetAllGems()
+    {
+        Write("Command succesfull.");
+        ObjectsCount.instance.gems = 3;
+    }
+
     void GetInfiniteLife()
     {
         Write("Command succesfull."); 
@@ -164,10 +176,16 @@ public class DepurationConsole : MonoBehaviour {
     {
         Write("Command succesfull.");
 
+        
         if (commandToWrite.text == "infinite_mana = on")
-            FindObjectOfType<ModelCharacter>().manaToRecover = 100;
+        {
+            auxMana = ObjectsCount.instance.mana;
+            ObjectsCount.instance.mana = 999;
+        }
         if (commandToWrite.text == "infinite_mana = off")
-            FindObjectOfType<ModelCharacter>().manaToRecover = 0f;
+        {
+            ObjectsCount.instance.mana = auxMana;
+        }
     }
 
     void GetInfiniteOil()

@@ -10,6 +10,8 @@ public class ViewCharacter : MonoBehaviour, IOnPause {
 
     public event Action OnDeath = delegate { };
 
+    public static int manaToNextLevel = 0;
+
     public Image cursor;
     public Image life;
     public Text oil;
@@ -45,7 +47,7 @@ public class ViewCharacter : MonoBehaviour, IOnPause {
             channels[i].clip = clips[i];
         }
 
-        steam.playOnAwake = false;
+        //steam.playOnAwake = false;
         steam.Stop();
     }
 
@@ -54,11 +56,12 @@ public class ViewCharacter : MonoBehaviour, IOnPause {
         alpha = 0;
         cursor.enabled = false;
         walkAnimation = Camera.main.GetComponent<CameraWalkAnimation>();
+
+        manaCount.text = "x" + manaToNextLevel;
     }
 
     private void Update()
     {
-
         if (life.fillAmount <= 0)
         {
             if (alpha < 255)
@@ -188,6 +191,7 @@ public class ViewCharacter : MonoBehaviour, IOnPause {
                 ObjectsCount.instance.mana = 0;
         }
 
+        manaToNextLevel = ObjectsCount.instance.mana;
         manaCount.text = "x" + ObjectsCount.instance.mana;
     }
 

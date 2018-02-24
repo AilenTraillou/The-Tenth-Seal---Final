@@ -1,16 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Advertisements;
+//using UnityEngine.Advertisements;
 
-public class Ads : MonoBehaviour {
-
-    void OnDeath()
+public class Ads : MonoBehaviour
+{
+    public void OnDeath()
     {
-        if (Advertisement.IsReady())
-        {
-            Advertisement.Show();
-            print("asasasasasasasasasasa adssssss");
-        }
+        //Advertisement.Initialize("1469918", true);
+        //StartCoroutine(ShowAd());
+        //print("asasasa adssss");
     }
+
+    //public static IEnumerator ShowAd() 
+    //{
+    //    while (!Advertisement.IsReady())
+    //        yield return new WaitForEndOfFrame();
+    //    Advertisement.Show();
+    //}
 }

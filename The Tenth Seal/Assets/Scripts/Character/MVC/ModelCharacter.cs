@@ -102,6 +102,7 @@ public class ModelCharacter : MonoBehaviour, IOnPause {
         chJumpStr = characterJumpStr;
 
         life = lifeToNextLevel;
+        oil = oilToNextLevel;
     }
 	
 	void Update () {
@@ -345,6 +346,8 @@ public class ModelCharacter : MonoBehaviour, IOnPause {
         }
 
         ConsumeOil(consumeOil);
+
+        oilToNextLevel = oil;
     }
 
     /// 
@@ -395,7 +398,7 @@ public class ModelCharacter : MonoBehaviour, IOnPause {
                 }
 
                 if (objectOnTrigger.GetComponent(typeof(Mana)))
-                {                    
+                {
                     ManaManage(objectOnTrigger);
                     DestroyGameObject(objectOnTrigger);
                     ObjectsCount.instance.totalItemsOnLevelFound++;

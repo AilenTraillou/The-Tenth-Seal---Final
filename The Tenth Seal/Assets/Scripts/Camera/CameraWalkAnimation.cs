@@ -17,12 +17,11 @@ public class CameraWalkAnimation : MonoBehaviour
     {
         upLimit = transform.localPosition.y + movementDistance;
         downLimit = transform.localPosition.y - movementDistance;
-
     }
 
 	void Update ()
     {
-        if (walk)
+        if (walk || gameObject.tag == "ghost")
         {
             transform.localPosition += Vector3.up * animSpeed * Time.deltaTime * dir;
 
