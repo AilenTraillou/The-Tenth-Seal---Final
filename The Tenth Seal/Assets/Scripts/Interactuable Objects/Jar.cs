@@ -10,6 +10,7 @@ public class Jar : MonoBehaviour, IInteractuableObjects, IChechPointObservable {
     public AudioClip sound;
     public Light _light;
     bool activeJar;
+    bool stop;
     ICheckPointObserver checkpointManager;
     AudioSource audioSource;
 
@@ -34,12 +35,12 @@ public class Jar : MonoBehaviour, IInteractuableObjects, IChechPointObservable {
     void StopSteam()
     {
         steam.Stop();
-        MessegeController.instance.OpenDialog(MessageDictionary.SPELL_DONE);
+      //  MessegeController.instance.OpenDialog(MessageDictionary.SPELL_DONE);
     }
 
     public void ActivateObject()
     {
-        if (ObjectsCount.instance.mana > 0 && activeJar == false)
+        if (!stop)
         {
             FindObjectOfType<ModelCharacter>().usedCheckpoint = true;
 
@@ -49,22 +50,23 @@ public class Jar : MonoBehaviour, IInteractuableObjects, IChechPointObservable {
             checkpointManager.Notify(ph);
             activeJar = false;
 
-            if(gameObject.tag == "GoAway")
+            MessegeController.instance.OpenDialog(MessageDictionary.SPELL_DONE);
+
+            if (gameObject.tag == "GoAway")
             {
                 GoAwayMessage goAway = FindObjectOfType<GoAwayMessage>();
-                if(goAway != null)
-                    goAway.activateMessage = true;            
+                if (goAway != null)
+                    goAway.activateMessage = true;
             }
+            stop = true;
         }
 
-        if(ObjectsCount.instance.mana == 0 && activeJar == false)
+       /* if(ObjectsCount.instance.mana == 0 && activeJar == false)
         {
                 MessegeController.instance.OpenDialog(MessageDictionary.CANNOT_GET_CHECKPOINT);
         }
-        if (ObjectsCount.instance.mana > 0 && activeJar)
-        {
-            MessegeController.instance.OpenDialog(MessageDictionary.SPELL_DONE);
-        }
+        */
+      
     }
 
     public void DesactivateObject()

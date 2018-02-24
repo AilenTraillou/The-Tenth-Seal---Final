@@ -12,13 +12,18 @@ public class CreepyPainting : MonoBehaviour, IInteractuableObjects {
     public AudioClip sound;
     public Image blood;
     bool activateBlood;
+    bool stop;
     AudioSource audioSource;
 
     public void ActivateObject()
     {
-        audioSource.Play();
-        NextStage();
-        activateBlood = true;
+        if (!stop)
+        {
+            audioSource.Play();
+            NextStage();
+            activateBlood = true;
+            stop = true;
+        }
     }
 
     void Update()
