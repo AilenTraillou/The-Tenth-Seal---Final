@@ -1,6 +1,7 @@
 5.5.2f1:2.3.0.0
 StandaloneWindows
 F:/Unity 5.5/Editor/Data/Managed/UnityEngine.dll
+F:/Unity 5.5/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll
 F:/Unity 5.5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll
 F:/Unity 5.5/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll
 F:/Unity 5.5/Editor/Data/UnityExtensions/Unity/PlaymodeTestsRunner/UnityEngine.PlaymodeTestsRunner.dll
