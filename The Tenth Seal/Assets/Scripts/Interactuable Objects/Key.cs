@@ -22,7 +22,7 @@ public class Key : MonoBehaviour, IInteractuableObjects
         if(gameObject.tag == "GoAway")
         {
             InvokeSlugs slugs = FindObjectOfType<InvokeSlugs>();
-            slugs.Slugs();                 
+           //w slugs.Slugs();                 
         }
 
     }

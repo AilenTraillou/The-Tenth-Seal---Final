@@ -45,7 +45,7 @@ public class MessageDictionary
     public const string GET_GEMS = "Gem taken";
     public const string CANNOT_GET_OIL = "It looks like there is no more oil...";
     public const string CANNOT_GET_CHECKPOINT = "Haven't enough substance to invoke the spell...";
-    public const string SPELL_DONE = "The spell is done.";
+    public const string SPELL_DONE = "The spell is done, new checkpoint unlock.";
     public const string GET_MEDICINE= "Medicine taken.";
     public const string BLOCK_DOOR = "The door is blocked in the other side.";
     public const string GET_RED_SUBSTANCES = "Some red substances found.";
