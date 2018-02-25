@@ -8,8 +8,8 @@ public class CameraWalkAnimation : MonoBehaviour
 
     public float movementDistance;
     public float animSpeed;
-    public float upLimit;
-    public float downLimit;
+    private float upLimit;
+    private float downLimit;
     public int dir = 1;
     public bool walk;
 
