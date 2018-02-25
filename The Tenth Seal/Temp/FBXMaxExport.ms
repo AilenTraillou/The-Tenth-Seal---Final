@@ -26,18 +26,18 @@ fn DialogCallback =
 pluginManager.loadClass FBXIMP;
 pluginManager.loadClass FBXEXP;
 
-openLog "C:/Users/Ailen/DOCUME~1/GitHub/THE-TE~2/THETEN~1/Temp/3dsMax.log" mode:"w"
+openLog "C:/Users/Lucas2/Desktop/FACULT~1/TPMOTO~1.1/THE-TE~1/THETEN~1/Temp/3dsMax.log" mode:"w"
 print "Start of log file."; flushLog();
 while true do
 (	
-	if ( fileExists "C:/Users/Ailen/DOCUME~1/GitHub/THE-TE~2/THETEN~1/Temp/MaxCommandPipe" ) then
+	if ( fileExists "C:/Users/Lucas2/Desktop/FACULT~1/TPMOTO~1.1/THE-TE~1/THETEN~1/Temp/MaxCommandPipe" ) then
 	(
 		exportNormals = false;
 		exportTangents = false;
 		bakeAnimations = false;
 		useFileUnits = false;
 	
-		waitpipe = (openFile "C:/Users/Ailen/DOCUME~1/GitHub/THE-TE~2/THETEN~1/Temp/MaxCommandPipe" mode:"r");
+		waitpipe = (openFile "C:/Users/Lucas2/Desktop/FACULT~1/TPMOTO~1.1/THE-TE~1/THETEN~1/Temp/MaxCommandPipe" mode:"r");
 		filename = (readLine waitpipe);
 		fbxFilename = (readline waitpipe);
 		
@@ -154,7 +154,7 @@ while true do
 					print "After fbx export"; flushLog();
 				)
 
-				deleteFile "C:/Users/Ailen/DOCUME~1/GitHub/THE-TE~2/THETEN~1/Temp/MaxCommandPipe";
+				deleteFile "C:/Users/Lucas2/Desktop/FACULT~1/TPMOTO~1.1/THE-TE~1/THETEN~1/Temp/MaxCommandPipe";
 				print "Finished max loading and fbx conversion"; flushLog();
 			) -- with defaultAction
 		)
