@@ -15,7 +15,7 @@ public class Gems : MonoBehaviour, IInteractuableObjects
         if(gameObject.tag == "ghost")
         {
             InvokeGhost ghost = FindObjectOfType<InvokeGhost>();
-            ghost.Ghost();
+           // ghost.Ghost();
         }
     }
 
